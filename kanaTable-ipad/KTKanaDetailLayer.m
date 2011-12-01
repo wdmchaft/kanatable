@@ -146,6 +146,7 @@
     KTKanaLayer *kanaLayer = [[KTKanaLayer alloc] initWithKanaType:kanaObject.kanaType];
     CCScene *kanaTableScene = [CCScene node];
     [kanaTableScene addChild:kanaLayer];
+    [kanaLayer release];
     
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION

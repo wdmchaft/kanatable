@@ -86,6 +86,7 @@
     CCScene *kanaScene = [CCScene node];
     KTKanaLayer *kanaLayer = [[KTKanaLayer alloc] initWithKanaType:HIRAGANA];
     [kanaScene addChild:kanaLayer];
+    [kanaLayer release];
     
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInR 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION 
@@ -98,6 +99,7 @@
     CCScene *kanaScene = [CCScene node];
     KTKanaLayer *kanaLayer = [[KTKanaLayer alloc] initWithKanaType:KATAKANA];
     [kanaScene addChild:kanaLayer];
+    [kanaLayer release];
     
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInR 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION
