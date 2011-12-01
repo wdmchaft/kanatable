@@ -123,6 +123,9 @@
 		090A24B71487D4CF005AF496 /* KTMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24B31487D4CF005AF496 /* KTMenuLayer.m */; };
 		090A24BF1487D51A005AF496 /* KTKana.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24BC1487D51A005AF496 /* KTKana.m */; };
 		090A24C01487D51A005AF496 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24BE1487D51A005AF496 /* Plist.m */; };
+		090A24C51487D55D005AF496 /* hiragana.plist in Resources */ = {isa = PBXBuildFile; fileRef = 090A24C21487D55D005AF496 /* hiragana.plist */; };
+		090A24C61487D55D005AF496 /* katakana.plist in Resources */ = {isa = PBXBuildFile; fileRef = 090A24C31487D55D005AF496 /* katakana.plist */; };
+		090A24C71487D55D005AF496 /* romaji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 090A24C41487D55D005AF496 /* romaji.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -370,6 +373,9 @@
 		090A24BC1487D51A005AF496 /* KTKana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTKana.m; sourceTree = "<group>"; };
 		090A24BD1487D51A005AF496 /* Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
 		090A24BE1487D51A005AF496 /* Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
+		090A24C21487D55D005AF496 /* hiragana.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hiragana.plist; sourceTree = "<group>"; };
+		090A24C31487D55D005AF496 /* katakana.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = katakana.plist; sourceTree = "<group>"; };
+		090A24C41487D55D005AF496 /* romaji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = romaji.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +452,7 @@
 		090A23401487D18B005AF496 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				090A24C11487D54D005AF496 /* Dictionaries */,
 				090A23431487D18B005AF496 /* fps_images.png */,
 				090A23511487D18B005AF496 /* Info.plist */,
 			);
@@ -793,6 +800,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		090A24C11487D54D005AF496 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				090A24C21487D55D005AF496 /* hiragana.plist */,
+				090A24C31487D55D005AF496 /* katakana.plist */,
+				090A24C41487D55D005AF496 /* romaji.plist */,
+			);
+			name = Dictionaries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -848,6 +865,9 @@
 				090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */,
 				090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */,
 				090A24AA1487D414005AF496 /* icon72x72.png in Resources */,
+				090A24C51487D55D005AF496 /* hiragana.plist in Resources */,
+				090A24C61487D55D005AF496 /* katakana.plist in Resources */,
+				090A24C71487D55D005AF496 /* romaji.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
