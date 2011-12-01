@@ -1196,7 +1196,8 @@
 				090A25481487D633005AF496 /* zo.wav */,
 				090A25491487D633005AF496 /* zu.wav */,
 			);
-			path = Audio;
+			name = Audio;
+			path = Resources/Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1587,6 +1588,7 @@
 				090A24A21487D18F005AF496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
