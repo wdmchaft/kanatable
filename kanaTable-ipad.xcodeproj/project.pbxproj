@@ -114,6 +114,9 @@
 		090A24931487D18F005AF496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24921487D18F005AF496 /* main.m */; };
 		090A24961487D18F005AF496 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24951487D18F005AF496 /* AppDelegate.m */; };
 		090A24991487D18F005AF496 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24981487D18F005AF496 /* RootViewController.m */; };
+		090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A51487D395005AF496 /* Default-Landscape~ipad.png */; };
+		090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */; };
+		090A24AA1487D414005AF496 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A91487D414005AF496 /* icon72x72.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,6 +347,9 @@
 		090A24971487D18F005AF496 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		090A24981487D18F005AF496 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		090A249D1487D18F005AF496 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		090A24A51487D395005AF496 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		090A24A91487D414005AF496 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +374,9 @@
 		090A23201487D18B005AF496 = {
 			isa = PBXGroup;
 			children = (
+				090A24A91487D414005AF496 /* icon72x72.png */,
+				090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */,
+				090A24A51487D395005AF496 /* Default-Landscape~ipad.png */,
 				090A233F1487D18B005AF496 /* kanaTable-ipad */,
 				090A232E1487D18B005AF496 /* Frameworks */,
 				090A232C1487D18B005AF496 /* Products */,
@@ -786,6 +795,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				090A23441487D18B005AF496 /* fps_images.png in Resources */,
+				090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */,
+				090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */,
+				090A24AA1487D414005AF496 /* icon72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
