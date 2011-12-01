@@ -117,6 +117,10 @@
 		090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A51487D395005AF496 /* Default-Landscape~ipad.png */; };
 		090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */; };
 		090A24AA1487D414005AF496 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A91487D414005AF496 /* icon72x72.png */; };
+		090A24B41487D4CF005AF496 /* KTInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24AD1487D4CF005AF496 /* KTInfoLayer.m */; };
+		090A24B51487D4CF005AF496 /* KTKanaDetailLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24AF1487D4CF005AF496 /* KTKanaDetailLayer.m */; };
+		090A24B61487D4CF005AF496 /* KTKanaLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24B11487D4CF005AF496 /* KTKanaLayer.m */; };
+		090A24B71487D4CF005AF496 /* KTMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24B31487D4CF005AF496 /* KTMenuLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,6 +354,14 @@
 		090A24A51487D395005AF496 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		090A24A91487D414005AF496 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
+		090A24AC1487D4CF005AF496 /* KTInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInfoLayer.h; sourceTree = "<group>"; };
+		090A24AD1487D4CF005AF496 /* KTInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInfoLayer.m; sourceTree = "<group>"; };
+		090A24AE1487D4CF005AF496 /* KTKanaDetailLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTKanaDetailLayer.h; sourceTree = "<group>"; };
+		090A24AF1487D4CF005AF496 /* KTKanaDetailLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTKanaDetailLayer.m; sourceTree = "<group>"; };
+		090A24B01487D4CF005AF496 /* KTKanaLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTKanaLayer.h; sourceTree = "<group>"; };
+		090A24B11487D4CF005AF496 /* KTKanaLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTKanaLayer.m; sourceTree = "<group>"; };
+		090A24B21487D4CF005AF496 /* KTMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMenuLayer.h; sourceTree = "<group>"; };
+		090A24B31487D4CF005AF496 /* KTMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMenuLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +421,7 @@
 		090A233F1487D18B005AF496 /* kanaTable-ipad */ = {
 			isa = PBXGroup;
 			children = (
+				090A24AB1487D4B1005AF496 /* Layers */,
 				090A24941487D18F005AF496 /* AppDelegate.h */,
 				090A24951487D18F005AF496 /* AppDelegate.m */,
 				090A24971487D18F005AF496 /* RootViewController.h */,
@@ -743,6 +756,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		090A24AB1487D4B1005AF496 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				090A24AC1487D4CF005AF496 /* KTInfoLayer.h */,
+				090A24AD1487D4CF005AF496 /* KTInfoLayer.m */,
+				090A24AE1487D4CF005AF496 /* KTKanaDetailLayer.h */,
+				090A24AF1487D4CF005AF496 /* KTKanaDetailLayer.m */,
+				090A24B01487D4CF005AF496 /* KTKanaLayer.h */,
+				090A24B11487D4CF005AF496 /* KTKanaLayer.m */,
+				090A24B21487D4CF005AF496 /* KTMenuLayer.h */,
+				090A24B31487D4CF005AF496 /* KTMenuLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -906,6 +934,10 @@
 				090A24931487D18F005AF496 /* main.m in Sources */,
 				090A24961487D18F005AF496 /* AppDelegate.m in Sources */,
 				090A24991487D18F005AF496 /* RootViewController.m in Sources */,
+				090A24B41487D4CF005AF496 /* KTInfoLayer.m in Sources */,
+				090A24B51487D4CF005AF496 /* KTKanaDetailLayer.m in Sources */,
+				090A24B61487D4CF005AF496 /* KTKanaLayer.m in Sources */,
+				090A24B71487D4CF005AF496 /* KTMenuLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
