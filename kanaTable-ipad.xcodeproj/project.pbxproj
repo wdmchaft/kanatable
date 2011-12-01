@@ -245,6 +245,8 @@
 		090A25B51487D64E005AF496 /* infobut.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A25B21487D64E005AF496 /* infobut.png */; };
 		090A25B81487D657005AF496 /* kanabackground_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A25B61487D657005AF496 /* kanabackground_one.png */; };
 		090A25B91487D657005AF496 /* kanabackground_two.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A25B71487D657005AF496 /* kanabackground_two.png */; };
+		097A1D3F1487FFF2005EA842 /* kana_table_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3D1487FFF2005EA842 /* kana_table_sel.png */; };
+		097A1D401487FFF2005EA842 /* kana_table.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3E1487FFF2005EA842 /* kana_table.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -614,6 +616,8 @@
 		090A25B21487D64E005AF496 /* infobut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infobut.png; sourceTree = "<group>"; };
 		090A25B61487D657005AF496 /* kanabackground_one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanabackground_one.png; sourceTree = "<group>"; };
 		090A25B71487D657005AF496 /* kanabackground_two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanabackground_two.png; sourceTree = "<group>"; };
+		097A1D3D1487FFF2005EA842 /* kana_table_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table_sel.png; path = Resources/kana_table_sel.png; sourceTree = "<group>"; };
+		097A1D3E1487FFF2005EA842 /* kana_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table.png; path = Resources/kana_table.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,6 +1084,8 @@
 		090A24CA1487D5BE005AF496 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				097A1D3D1487FFF2005EA842 /* kana_table_sel.png */,
+				097A1D3E1487FFF2005EA842 /* kana_table.png */,
 				090A25B61487D657005AF496 /* kanabackground_one.png */,
 				090A25B71487D657005AF496 /* kanabackground_two.png */,
 				090A24D51487D610005AF496 /* menu_button_sel.png */,
@@ -1377,6 +1383,8 @@
 				090A25B51487D64E005AF496 /* infobut.png in Resources */,
 				090A25B81487D657005AF496 /* kanabackground_one.png in Resources */,
 				090A25B91487D657005AF496 /* kanabackground_two.png in Resources */,
+				097A1D3F1487FFF2005EA842 /* kana_table_sel.png in Resources */,
+				097A1D401487FFF2005EA842 /* kana_table.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
