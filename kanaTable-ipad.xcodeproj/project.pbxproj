@@ -452,6 +452,7 @@
 		090A23401487D18B005AF496 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				090A24C81487D5AD005AF496 /* Graphics */,
 				090A24C11487D54D005AF496 /* Dictionaries */,
 				090A23431487D18B005AF496 /* fps_images.png */,
 				090A23511487D18B005AF496 /* Info.plist */,
@@ -808,6 +809,29 @@
 				090A24C41487D55D005AF496 /* romaji.plist */,
 			);
 			name = Dictionaries;
+			sourceTree = "<group>";
+		};
+		090A24C81487D5AD005AF496 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				090A24CA1487D5BE005AF496 /* Table */,
+				090A24C91487D5B8005AF496 /* Menu */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		090A24C91487D5B8005AF496 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		090A24CA1487D5BE005AF496 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
