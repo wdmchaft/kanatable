@@ -6,12 +6,18 @@
 //  Copyright 2011 Flexnor. All rights reserved.
 //
 
-#import "SimpleAudioEngine.h"
 #import "KTKanaDetailLayer.h"
+#import "SimpleAudioEngine.h"
 #import "com.ccColor3B.h"
 #import "KTMenuLayer.h"
 #import "KTKanaLayer.h"
 #import "KTGlobal.h"
+
+@interface KTKanaDetailLayer(Drawing)
+-(void) startDrawing;
+-(void) endDrawing;
+-(void) clearDrawing;
+@end
 
 @implementation KTKanaDetailLayer
 
@@ -46,36 +52,14 @@
                                      fontName:@"Arial" 
                                      fontSize:300];
     
-    kanaLabel.position = ccp(winSize.width/2, winSize.height/2);
-    romajiLabel.position = ccp(winSize.width/2, winSize.height/2);
-    
     //We want to first show the japanese kana.
     isKanaVisible = YES;
     [romajiLabel setVisible:NO];
+    kanaLabel.position = ccp(winSize.width/2, winSize.height/2);
+    romajiLabel.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:romajiLabel];
     [self addChild:kanaLabel];
     
-    //Sound button
-    CCMenuItemImage *playItem = [CCMenuItemImage itemFromNormalImage:@"play.png" 
-                                                       selectedImage:@"play_sel.png" 
-                                                              target:self 
-                                                            selector:@selector(playKanaSound)];
-    CCMenu *soundMenu = [CCMenu menuWithItems:playItem, nil];
-    [soundMenu setContentSize:CGSizeMake(playItem.contentSize.width, playItem.contentSize.height)];
-    soundMenu.position = ccp(512, 620);
-    [self addChild:soundMenu];
-    
-    NSLog(@"soundMenu: %fx%f", soundMenu.contentSize.width, soundMenu.contentSize.height);
-    
-    //Add the back button
-    CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"kana_table.png" 
-                                                       selectedImage:@"kana_table_sel.png" 
-                                                              target:self 
-                                                            selector:@selector(returnToTable)];    
-    CCMenu *backMenu = [CCMenu menuWithItems:backItem, nil];
-    [backMenu setContentSize:CGSizeMake(backItem.contentSize.width, backItem.contentSize.height)];
-    backMenu.position = ccp(winSize.width/2, 47);
-    [self addChild:backMenu];
     
     if ([kanaObject isDiatric])
         [self setupMiniMenuDiatric];
@@ -87,7 +71,65 @@
     
     NSString *sound = [NSString stringWithFormat:@"%@.wav", romajiLabel.string];
     [[SimpleAudioEngine sharedEngine] preloadEffect:sound];
+    
+    [self setupMenu];
 }
+
+-(void) setupMenu{
+    
+    //Back button
+    CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"kana_table.png" 
+                                                       selectedImage:@"kana_table_sel.png" 
+                                                              target:self 
+                                                            selector:@selector(returnToTable)];    
+    CCMenu *backMenu = [CCMenu menuWithItems:backItem, nil];
+    [backMenu setContentSize:CGSizeMake(backItem.contentSize.width, backItem.contentSize.height)];
+    backMenu.position = ccp(winSize.width/2, 47);
+    [self addChild:backMenu];
+    
+    
+    //Sound button
+    CCMenuItemImage *playItem = [CCMenuItemImage itemFromNormalImage:@"play.png" 
+                                                       selectedImage:@"play_sel.png" 
+                                                              target:self 
+                                                            selector:@selector(playKanaSound)];
+    //Draw button
+    pencilItem = [CCMenuItemImage itemFromNormalImage:@"pen_default.png" 
+                                        selectedImage:@"pen_default.png" 
+                                               target:self 
+                                             selector:@selector(startDrawing)];
+    
+    CCMenu *optionsMenu = [CCMenu menuWithItems:playItem, pencilItem, nil];
+    [optionsMenu setContentSize:CGSizeMake(playItem.contentSize.width + pencilItem.contentSize.width, 
+                                           playItem.contentSize.height + pencilItem.contentSize.height)];
+    [optionsMenu alignItemsHorizontally];
+    optionsMenu.position = ccp(512, 620);
+    [self addChild:optionsMenu];
+    
+    
+    CCMenuItemImage *finishedItem = [CCMenuItemImage itemFromNormalImage:@"v_default.png" 
+                                                           selectedImage:@"v_default.png" 
+                                                                  target:self 
+                                                                selector:@selector(endDrawing)];
+    
+    CCMenuItemImage *clearItem = [CCMenuItemImage itemFromNormalImage:@"x_default.png" 
+                                                        selectedImage:@"x_default.png"
+                                                               target:self selector:@selector(clearDrawing)];
+
+
+    drawMenuOne = [CCMenu menuWithItems:finishedItem, nil];
+    drawMenuOne.position = ccp(587, 585);
+    [drawMenuOne setVisible:NO];
+    [self addChild:drawMenuOne z:11];
+    
+    drawMenuTwo = [CCMenu menuWithItems:clearItem, nil];
+    drawMenuTwo.position = ccp(556, 585);
+    [drawMenuTwo setVisible:NO];
+    [self addChild:drawMenuTwo z:10];
+    
+
+}
+
 
 -(void) setupMiniMenuDiatric{
     
@@ -159,10 +201,109 @@
     [[SimpleAudioEngine sharedEngine] playEffect:sound];
 }
 
+
+-(void) startDrawing{
+    
+    if (isKanaVisible == NO) {
+        return ;
+    }
+    
+    [drawMenuOne setVisible:YES];
+    [drawMenuTwo setVisible:YES];
+    
+    [kanaLabel setOpacity:128];
+    [pencilItem setOpacity:128];
+    isDrawing = YES;
+    
+    
+    if (brush == nil) {
+        brush = [[CCSprite spriteWithFile:@"fire.png"] retain];   
+        [brush setOpacity:100];
+    }
+    
+    if (target == nil) {
+        target = [[CCRenderTexture renderTextureWithWidth:winSize.width height:winSize.height] retain];
+        [target setPosition:ccp(winSize.width/2, winSize.height/2)];
+        [self addChild:target z:-1];
+    }
+}
+
+-(void) endDrawing{
+    
+    if (isDrawing == NO) {
+        return ;
+    }
+    
+    isDrawing = NO;
+    [drawMenuOne setVisible:NO];
+    [drawMenuTwo setVisible:NO];
+    [pencilItem setOpacity:255];
+    [kanaLabel setOpacity:255];
+    
+    [self removeChild:target cleanup:YES];
+    [self removeChild:brush cleanup:YES];
+    target = nil, brush = nil;
+}
+
+-(void) clearDrawing{
+    
+    if (isDrawing == NO) {
+        return ;
+    }
+    
+    [self removeChild:target cleanup:YES];
+    target = nil;
+    
+    [self startDrawing];
+    //    [target clear:CCRANDOM_0_1() g:CCRANDOM_0_1() b:CCRANDOM_0_1() a:CCRANDOM_0_1()];
+}
+
+
 #pragma mark -
 #pragma mark CCStandardTouchDelegate
+//Code snippet from cocos2d test
+//Start snippet
+-(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	UITouch *touch = [touches anyObject];
+	CGPoint start = [touch locationInView: [touch view]];	
+	start = [[CCDirector sharedDirector] convertToGL: start];
+	CGPoint end = [touch previousLocationInView:[touch view]];
+	end = [[CCDirector sharedDirector] convertToGL:end];
+    
+	// begin drawing to the render texture
+	[target begin];
+	
+	// for extra points, we'll draw this smoothly from the last position and vary the sprite's
+	// scale/rotation/offset
+	float distance = ccpDistance(start, end);
+	if (distance > 1)
+	{
+		int d = (int)distance;
+		for (int i = 0; i < d; i++)
+		{
+			float difx = end.x - start.x;
+			float dify = end.y - start.y;
+			float delta = (float)i / distance;
+			[brush setPosition:ccp(start.x + (difx * delta), start.y + (dify * delta))];
+			[brush setRotation:rand()%360];
+			float r = ((float)(rand()%50)/50.f) + 0.25f;
+			[brush setScale:r];
+			[brush setColor:ccc3(CCRANDOM_0_1()*127+128, 255, 255) ];
+			// Call visit to draw the brush, don't call draw..
+			[brush visit];
+		}
+	}
+	// finish drawing and return context back to the screen
+	[target end];	
+}
+//End snippet
 
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    if (isDrawing == YES) {
+        return ;
+    }
     
     UITouch* touch = [touches anyObject];
     
@@ -268,6 +409,10 @@
 #pragma mark KanaDiatricDelegate
 
 -(void) didSelectDiatricKanaItem:(CCMenuItemLabel *)item{
+    
+    if (isDrawing == YES) {
+        return ;
+    }
     
     //No need to make change for retapping current item.
     if (previousItem.tag == item.tag)

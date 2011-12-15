@@ -25,17 +25,25 @@
     TKKanaType kanaType;
     KTKana *kanaObject;
     
-    CCMenu *diatricKanaMenu;
+    CCMenu *diatricKanaMenu, *drawMenuOne, *drawMenuTwo;
     CCMenuItemLabel *previousItem;
+    CCMenuItemImage *pencilItem;
     CGSize winSize;
     
     CCSprite *background;
+    
+    
+    //Draw stuff
+    BOOL isDrawing;
+    CCSprite *brush;
+    CCRenderTexture *target;
 }
 
 // Setup the kana to display and pronunciation. Add the back button.
 -(id) initWithKana:(KTKana *)aKana;
 //Add the kana to the layer.
 -(void) setupDetailKana;
+-(void) setupMenu;
 // Pop the running scene and return to the table.
 -(void) returnToTable;
 //Load in the diatric kanas and add them to the menu
