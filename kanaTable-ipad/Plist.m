@@ -7,13 +7,12 @@
 //
 
 #import "Plist.h"
-#import "ccMacros.h"
 
 @implementation Plist
 
 -(id) init
 {
-
+    
 	if( (self=[super init])) {
     }
 	return self;
@@ -25,22 +24,15 @@
     NSString *errorDesc = nil; 
     NSPropertyListFormat format; 
     NSString *plistPath; 
-    NSString *rootPath; 
     
-    rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", fileName]]; 
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
-        CCLOG(@"Error plist does not exist: %@", plistPath);
-        plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
-    }
+    plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSDictionary *dict = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML 
-                                                            mutabilityOption:NSPropertyListMutableContainersAndLeaves 
-                                                                      format:&format errorDescription:&errorDesc];
+                                                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves 
+                                                                                    format:&format errorDescription:&errorDesc];
     if (!dict)
-        CCLOG(@"Error reading plist: %@", errorDesc);
+        NSLog(@"Error reading plist: %@", errorDesc);
     
     return dict;
 }
