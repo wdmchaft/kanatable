@@ -17,26 +17,28 @@
 @end
 
 @interface KTKanaDetailLayer : CCLayer<TouchDelegate, KTKanaDiatricDataSource, KTKanaDiatricDelegate>{
+
+    CGSize winSize;
+    CCSprite *background;
+    CCMenu *diatricKanaMenu;
+    CCMenuItemLabel *previousItem;
+    CCMenuItemImage *pencilItem;
+        
     CCLabelTTF *kanaLabel;
     CCLabelTTF *romajiLabel;
     
     BOOL isKanaVisible;
-    
+    BOOL isTransition;//Used for switching the current kana
     TKKanaType kanaType;
     KTKana *kanaObject;
-    
-    CCMenu *diatricKanaMenu, *drawMenuOne, *drawMenuTwo;
-    CCMenuItemLabel *previousItem;
-    CCMenuItemImage *pencilItem;
-    CGSize winSize;
-    
-    CCSprite *background;
-    
     
     //Draw stuff
     BOOL isDrawing;
     CCSprite *brush;
     CCRenderTexture *target;
+
+    CCSprite *finishedSprite;
+    CCSprite *clearSprite;
 }
 
 // Setup the kana to display and pronunciation. Add the back button.
@@ -53,5 +55,6 @@
 //Used when user's tap a diatric kana
 -(void) fadeOutLabel:(CCLabelTTF *) label;
 -(void) fadeInLabel:(CCLabelTTF *) label;
+-(void) transitionDone;
 
 @end
