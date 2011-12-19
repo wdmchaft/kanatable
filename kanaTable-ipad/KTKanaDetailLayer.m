@@ -77,6 +77,8 @@
 
 -(void) setupMenu{
     
+    isTransition = NO;
+    
     //Back button
     CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"kana_table.png" 
                                                        selectedImage:@"kana_table_sel.png" 
@@ -107,27 +109,18 @@
     [self addChild:optionsMenu];
     
     
-    CCMenuItemImage *finishedItem = [CCMenuItemImage itemFromNormalImage:@"v_default.png" 
-                                                           selectedImage:@"v_default.png" 
-                                                                  target:self 
-                                                                selector:@selector(endDrawing)];
     
-    CCMenuItemImage *clearItem = [CCMenuItemImage itemFromNormalImage:@"x_default.png" 
-                                                        selectedImage:@"x_default.png"
-                                                               target:self selector:@selector(clearDrawing)];
-
-
-    drawMenuOne = [CCMenu menuWithItems:finishedItem, nil];
-    drawMenuOne.position = ccp(587, 585);
-    [drawMenuOne setVisible:NO];
-    [self addChild:drawMenuOne z:11];
+    finishedSprite = [CCSprite spriteWithFile:@"v_default.png"];//endDrawing
+    clearSprite = [CCSprite spriteWithFile:@"x_default.png"];//Cleardrawing
     
-    drawMenuTwo = [CCMenu menuWithItems:clearItem, nil];
-    drawMenuTwo.position = ccp(556, 585);
-    [drawMenuTwo setVisible:NO];
-    [self addChild:drawMenuTwo z:10];
+    finishedSprite.position = ccp(583, 588);
+    clearSprite.position = ccp(552, 588);
     
-
+    [finishedSprite setVisible:NO];
+    [clearSprite setVisible:NO];
+    
+    [self addChild:clearSprite];
+    [self addChild:finishedSprite];
 }
 
 
@@ -201,24 +194,24 @@
     [[SimpleAudioEngine sharedEngine] playEffect:sound];
 }
 
+#pragma mark -
+#pragma - DRAWING methods
 
 -(void) startDrawing{
     
-    if (isKanaVisible == NO) {
-        return ;
-    }
+    if (isKanaVisible == NO || isTransition == YES) { return ; }
     
-    [drawMenuOne setVisible:YES];
-    [drawMenuTwo setVisible:YES];
+    [clearSprite setVisible:YES];
+    [finishedSprite setVisible:YES];
     
-    [kanaLabel setOpacity:128];
+    [kanaLabel setOpacity:20];
     [pencilItem setOpacity:128];
+    [pencilItem setIsEnabled:NO];
     isDrawing = YES;
     
     
     if (brush == nil) {
         brush = [[CCSprite spriteWithFile:@"fire.png"] retain];   
-        [brush setOpacity:100];
     }
     
     if (target == nil) {
@@ -230,14 +223,13 @@
 
 -(void) endDrawing{
     
-    if (isDrawing == NO) {
-        return ;
-    }
+    if (isDrawing == NO) { return ; }
     
     isDrawing = NO;
-    [drawMenuOne setVisible:NO];
-    [drawMenuTwo setVisible:NO];
+    [clearSprite setVisible:NO];
+    [finishedSprite setVisible:NO];
     [pencilItem setOpacity:255];
+    [pencilItem setIsEnabled:YES];
     [kanaLabel setOpacity:255];
     
     [self removeChild:target cleanup:YES];
@@ -261,6 +253,47 @@
 
 #pragma mark -
 #pragma mark CCStandardTouchDelegate
+
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch* touch = [touches anyObject];
+    
+    CGPoint location = [[CCDirector sharedDirector] convertToGL: [touch locationInView:[touch view]]];
+    CGRect touchArea, locationRect;
+    
+    if (isDrawing == YES) {
+        
+        touchArea = CGRectMake(583, 588, 28, 28);
+        locationRect = CGRectMake(location.x, location.y, touchArea.size.width, touchArea.size.height);
+        
+        
+        if (CGRectIntersectsRect(touchArea, locationRect)) {
+            [self endDrawing];
+        }
+        
+        touchArea = CGRectMake(552, 588, 28, 28);
+        locationRect = CGRectMake(location.x, location.y, touchArea.size.width, touchArea.size.height);
+        
+        if(CGRectIntersectsRect(touchArea, locationRect)){
+            [self clearDrawing];
+        }
+        
+        return ;
+    }
+    
+    //Check the visible one if it is the romaji or the syllable
+    if (isKanaVisible == YES)
+        touchArea = CGRectMake(kanaLabel.position.x, kanaLabel.position.y, kanaLabel.contentSize.width/2, kanaLabel.contentSize.height/2);
+    else
+        touchArea = CGRectMake(romajiLabel.position.x, romajiLabel.position.y, romajiLabel.contentSize.width/2, romajiLabel.contentSize.height/2);
+    
+    locationRect = CGRectMake(location.x, location.y, touchArea.size.width, touchArea.size.height);
+    
+    if ( CGRectIntersectsRect(touchArea, locationRect) ){
+        [self recievedTouch];
+    }
+}   
+
 //Code snippet from cocos2d test
 //Start snippet
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -299,35 +332,12 @@
 }
 //End snippet
 
--(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    if (isDrawing == YES) {
-        return ;
-    }
-    
-    UITouch* touch = [touches anyObject];
-    
-    
-    CGPoint location = [[CCDirector sharedDirector] convertToGL: [touch locationInView:[touch view]]];
-    CGRect touchArea, locationRect;
-    
-    //Check the visible one if it is the romaji or the syllable
-    if (isKanaVisible == YES)
-        touchArea = CGRectMake(kanaLabel.position.x, kanaLabel.position.y, kanaLabel.contentSize.width/2, kanaLabel.contentSize.height/2);
-    else
-        touchArea = CGRectMake(romajiLabel.position.x, romajiLabel.position.y, romajiLabel.contentSize.width/2, romajiLabel.contentSize.height/2);
-    
-    locationRect = CGRectMake(location.x, location.y, touchArea.size.width, touchArea.size.height);
-    
-    if ( CGRectIntersectsRect(touchArea, locationRect) ){
-        [self recievedTouch];
-    }
-}    
-
 #pragma mark -
 #pragma mark TouchDelegate 
 
 -(void) recievedTouch{
+    
+    if (isDrawing == YES) { return ;    }
     
     float d = 2.0f;
     //Disable touch until flip action is over
@@ -414,6 +424,8 @@
         return ;
     }
     
+    isTransition = YES;
+    
     //No need to make change for retapping current item.
     if (previousItem.tag == item.tag)
         return ;
@@ -452,7 +464,15 @@
 -(void) fadeInLabel:(CCLabelTTF *)label{
     
     id actionFadeIn = [CCFadeIn actionWithDuration:ACTION_DURATION];
-    [label runAction:actionFadeIn];
+    CCCallFunc *tranEnd = [CCCallFunc actionWithTarget:self selector:@selector(transitionDone)];
+    
+    CCSequence *seq = [CCSequence actions:actionFadeIn, tranEnd, nil];
+    
+    [label runAction:seq];
+}
+
+-(void) transitionDone{
+    isTransition = NO;
 }
 
 
