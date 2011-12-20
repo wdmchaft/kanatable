@@ -116,7 +116,6 @@
 		090A24991487D18F005AF496 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24981487D18F005AF496 /* RootViewController.m */; };
 		090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A51487D395005AF496 /* Default-Landscape~ipad.png */; };
 		090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */; };
-		090A24AA1487D414005AF496 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 090A24A91487D414005AF496 /* icon72x72.png */; };
 		090A24B41487D4CF005AF496 /* KTInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24AD1487D4CF005AF496 /* KTInfoLayer.m */; };
 		090A24B51487D4CF005AF496 /* KTKanaDetailLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24AF1487D4CF005AF496 /* KTKanaDetailLayer.m */; };
 		090A24B61487D4CF005AF496 /* KTKanaLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 090A24B11487D4CF005AF496 /* KTKanaLayer.m */; };
@@ -248,6 +247,7 @@
 		097A1D3F1487FFF2005EA842 /* kana_table_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3D1487FFF2005EA842 /* kana_table_sel.png */; };
 		097A1D401487FFF2005EA842 /* kana_table.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3E1487FFF2005EA842 /* kana_table.png */; };
 		09AAA4781497FB300092E7EA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 09AAA4771497FB300092E7EA /* fire.png */; };
+		09BAADB314A0116C00679006 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BAADB214A0116C00679006 /* icon72x72.png */; };
 		09C2656414993F3900AD1DFF /* pen_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656114993F3900AD1DFF /* pen_default.png */; };
 		09C2656514993F3900AD1DFF /* v_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656214993F3900AD1DFF /* v_default.png */; };
 		09C2656614993F3900AD1DFF /* x_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656314993F3900AD1DFF /* x_default.png */; };
@@ -483,7 +483,6 @@
 		090A249D1487D18F005AF496 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		090A24A51487D395005AF496 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		090A24A91487D414005AF496 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 		090A24AC1487D4CF005AF496 /* KTInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInfoLayer.h; sourceTree = "<group>"; };
 		090A24AD1487D4CF005AF496 /* KTInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInfoLayer.m; sourceTree = "<group>"; };
 		090A24AE1487D4CF005AF496 /* KTKanaDetailLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTKanaDetailLayer.h; sourceTree = "<group>"; };
@@ -623,6 +622,7 @@
 		097A1D3D1487FFF2005EA842 /* kana_table_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table_sel.png; path = Resources/kana_table_sel.png; sourceTree = "<group>"; };
 		097A1D3E1487FFF2005EA842 /* kana_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table.png; path = Resources/kana_table.png; sourceTree = "<group>"; };
 		09AAA4771497FB300092E7EA /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
+		09BAADB214A0116C00679006 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 		09C2656114993F3900AD1DFF /* pen_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pen_default.png; path = Resources/pen_default.png; sourceTree = "<group>"; };
 		09C2656214993F3900AD1DFF /* v_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v_default.png; path = Resources/v_default.png; sourceTree = "<group>"; };
 		09C2656314993F3900AD1DFF /* x_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x_default.png; path = Resources/x_default.png; sourceTree = "<group>"; };
@@ -650,7 +650,7 @@
 		090A23201487D18B005AF496 = {
 			isa = PBXGroup;
 			children = (
-				090A24A91487D414005AF496 /* icon72x72.png */,
+				09BAADB214A0116C00679006 /* icon72x72.png */,
 				090A24A71487D3A2005AF496 /* Default-Portrait~ipad.png */,
 				090A24A51487D395005AF496 /* Default-Landscape~ipad.png */,
 				090A233F1487D18B005AF496 /* kanaTable-ipad */,
@@ -1280,7 +1280,6 @@
 				090A23441487D18B005AF496 /* fps_images.png in Resources */,
 				090A24A61487D395005AF496 /* Default-Landscape~ipad.png in Resources */,
 				090A24A81487D3A2005AF496 /* Default-Portrait~ipad.png in Resources */,
-				090A24AA1487D414005AF496 /* icon72x72.png in Resources */,
 				090A24C51487D55D005AF496 /* hiragana.plist in Resources */,
 				090A24C61487D55D005AF496 /* katakana.plist in Resources */,
 				090A24C71487D55D005AF496 /* romaji.plist in Resources */,
@@ -1409,6 +1408,7 @@
 				09C2656414993F3900AD1DFF /* pen_default.png in Resources */,
 				09C2656514993F3900AD1DFF /* v_default.png in Resources */,
 				09C2656614993F3900AD1DFF /* x_default.png in Resources */,
+				09BAADB314A0116C00679006 /* icon72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1533,7 +1533,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Flexnor";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Alemayhu (H42A83TT37)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1545,6 +1546,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "7711003A-D31A-4E3D-B452-FDF58224C77C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9202CF56-8351-47A8-B32D-1F6DF1600A35";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1554,7 +1557,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Flexnor";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Flexnor";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1562,6 +1566,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "7711003A-D31A-4E3D-B452-FDF58224C77C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7711003A-D31A-4E3D-B452-FDF58224C77C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1571,6 +1577,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Flexnor";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Alemayhu (H42A83TT37)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1580,6 +1588,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7711003A-D31A-4E3D-B452-FDF58224C77C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9202CF56-8351-47A8-B32D-1F6DF1600A35";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1589,6 +1599,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Flexnor";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Flexnor";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kanaTable-ipad/Prefix.pch";
@@ -1597,6 +1609,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7711003A-D31A-4E3D-B452-FDF58224C77C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7711003A-D31A-4E3D-B452-FDF58224C77C";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
