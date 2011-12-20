@@ -7,6 +7,7 @@
 //
 
 #import "Plist.h"
+#import "ccMacros.h"
 
 @implementation Plist
 
@@ -32,7 +33,7 @@
                                                                           mutabilityOption:NSPropertyListMutableContainersAndLeaves 
                                                                                     format:&format errorDescription:&errorDesc];
     if (!dict)
-        NSLog(@"Error reading plist: %@", errorDesc);
+        CCLOG(@"Error reading plist: %@", errorDesc);
     
     return dict;
 }
