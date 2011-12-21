@@ -45,17 +45,17 @@
     background.anchorPoint = ccp(0, 0);
     [self addChild:background];
     
-    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Select a level" fontName:@"Arial" fontSize:200];
+    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Select a level" fontName:@"Arial" fontSize:100];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     title.position = ccp(winSize.width/2, winSize.height - title.contentSize.height);
     [self addChild:title];
     
-    CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"Level #1" fontName:@"Arial" fontSize:100];
-    CCLabelTTF *labelTwo = [CCLabelTTF labelWithString:@"Level #2" fontName:@"Arial" fontSize:100];
-    CCLabelTTF *labelThree = [CCLabelTTF labelWithString:@"Level #3" fontName:@"Arial" fontSize:100];
-    CCLabelTTF *labelFour = [CCLabelTTF labelWithString:@"Level #4" fontName:@"Arial" fontSize:100];
-    CCLabelTTF *labelFive = [CCLabelTTF labelWithString:@"Level #5" fontName:@"Arial" fontSize:100];
-    CCLabelTTF *labelSix = [CCLabelTTF labelWithString:@"Level #6" fontName:@"Arial" fontSize:100];
+    CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"Level #1" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelTwo = [CCLabelTTF labelWithString:@"Level #2" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelThree = [CCLabelTTF labelWithString:@"Level #3" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelFour = [CCLabelTTF labelWithString:@"Level #4" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelFive = [CCLabelTTF labelWithString:@"Level #5" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelSix = [CCLabelTTF labelWithString:@"Level #6" fontName:@"Arial" fontSize:60];
     
     CCMenuItemLabel *itemOne = [CCMenuItemLabel itemWithLabel:labelOne target:nil selector:nil];
     CCMenuItemLabel *itemTwo = [CCMenuItemLabel itemWithLabel:labelTwo target:nil selector:nil];

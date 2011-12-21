@@ -50,7 +50,7 @@
     background.anchorPoint = ccp(0, 0);
     [self addChild:background];
     
-    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Memory game" fontName:@"Arial" fontSize:200];
+    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Memory game" fontName:@"Arial" fontSize:100];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     title.position = ccp(winSize.width/2, winSize.height - title.contentSize.height);
     [self addChild:title];
