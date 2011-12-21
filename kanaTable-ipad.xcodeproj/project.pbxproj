@@ -260,6 +260,8 @@
 		09C2656414993F3900AD1DFF /* pen_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656114993F3900AD1DFF /* pen_default.png */; };
 		09C2656514993F3900AD1DFF /* v_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656214993F3900AD1DFF /* v_default.png */; };
 		09C2656614993F3900AD1DFF /* x_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C2656314993F3900AD1DFF /* x_default.png */; };
+		09FCFB0B14A2520E00DE7FE3 /* KTMemoryCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FCFB0A14A2520E00DE7FE3 /* KTMemoryCard.m */; };
+		09FCFB0E14A253DE00DE7FE3 /* card_tmp.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FCFB0D14A253DE00DE7FE3 /* card_tmp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -647,6 +649,9 @@
 		09C2656114993F3900AD1DFF /* pen_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pen_default.png; path = Resources/pen_default.png; sourceTree = "<group>"; };
 		09C2656214993F3900AD1DFF /* v_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v_default.png; path = Resources/v_default.png; sourceTree = "<group>"; };
 		09C2656314993F3900AD1DFF /* x_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x_default.png; path = Resources/x_default.png; sourceTree = "<group>"; };
+		09FCFB0914A2520E00DE7FE3 /* KTMemoryCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMemoryCard.h; sourceTree = "<group>"; };
+		09FCFB0A14A2520E00DE7FE3 /* KTMemoryCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMemoryCard.m; sourceTree = "<group>"; };
+		09FCFB0D14A253DE00DE7FE3 /* card_tmp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_tmp.png; path = Resources/card_tmp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1248,6 +1253,8 @@
 				093803B514A22FFF00273B01 /* KTMemoryLevelLayer.m */,
 				093803BA14A239E700273B01 /* KTMemoryGameLayer.h */,
 				093803BB14A239E700273B01 /* KTMemoryGameLayer.m */,
+				09FCFB0914A2520E00DE7FE3 /* KTMemoryCard.h */,
+				09FCFB0A14A2520E00DE7FE3 /* KTMemoryCard.m */,
 			);
 			name = Games;
 			sourceTree = "<group>";
@@ -1272,6 +1279,7 @@
 		093803C014A23AA700273B01 /* Gameboard */ = {
 			isa = PBXGroup;
 			children = (
+				09FCFB0D14A253DE00DE7FE3 /* card_tmp.png */,
 				093803C114A23AB900273B01 /* lvl_menu_but_sel.png */,
 				093803C214A23AB900273B01 /* lvl_menu_but.png */,
 				093803C314A23AB900273B01 /* menu_but_sel.png */,
@@ -1480,6 +1488,7 @@
 				093803C614A23AB900273B01 /* lvl_menu_but.png in Resources */,
 				093803C714A23AB900273B01 /* menu_but_sel.png in Resources */,
 				093803C814A23AB900273B01 /* menu_but.png in Resources */,
+				09FCFB0E14A253DE00DE7FE3 /* card_tmp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,6 +1606,7 @@
 				093803AF14A22BC600273B01 /* KTMemoryMenuLayer.m in Sources */,
 				093803B614A22FFF00273B01 /* KTMemoryLevelLayer.m in Sources */,
 				093803BC14A239E700273B01 /* KTMemoryGameLayer.m in Sources */,
+				09FCFB0B14A2520E00DE7FE3 /* KTMemoryCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
