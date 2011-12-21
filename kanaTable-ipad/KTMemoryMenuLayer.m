@@ -1,0 +1,102 @@
+//
+//  KTMemoryMenuLayer.m
+//  kanaTable-ipad
+//
+//  Created by Alexander Alemayhu on 21.12.11.
+//  Copyright 2011 Flexnor. All rights reserved.
+//
+
+#import "KTMemoryMenuLayer.h"
+#import "KTGlobal.h"
+#import "KTMenuLayer.h"
+
+@interface KTMemoryMenuLayer()
+-(void) openHiraganaLevels;
+-(void) openKatakanaLevels;
+@end
+
+@implementation KTMemoryMenuLayer
+
++(CCScene *) scene
+{
+	
+	CCScene *scene = [CCScene node];
+	
+	KTMemoryMenuLayer *layer = [KTMemoryMenuLayer node];
+	
+	
+	[scene addChild: layer];
+	
+	return scene;
+}
+
+// on "init" you need to initialize your instance
+-(id) init
+{
+    
+	if( (self=[super init])) {
+        [self setupMenu];
+    }
+	return self;
+}
+
+#pragma mark -
+#pragma mark Setup
+
+-(void) setupMenu{
+
+    background = [CCSprite spriteWithFile:@"memo_menu.png"];
+    background.anchorPoint = ccp(0, 0);
+    [self addChild:background];
+    
+    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Memory game" fontName:@"Arial" fontSize:40];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    title.position = ccp(winSize.width/2, winSize.height - title.contentSize.height);
+    [self addChild:title];
+
+    hirItem = [CCMenuItemImage itemFromNormalImage:@"hiragana_but.png" 
+                                     selectedImage:@"hiragana_but_sel.png" 
+                                            target:self 
+                                          selector:@selector(openHiraganaLevels)];
+    katItem = [CCMenuItemImage itemFromNormalImage:@"katakana_but.png" 
+                                     selectedImage:@"katakana_but_sel.png" 
+                                            target:self 
+                                          selector:@selector(openKatakanaLevels)];
+    
+    menu = [CCMenu menuWithItems:hirItem, katItem, nil];
+    [menu alignItemsHorizontallyWithPadding:3];
+    [self addChild:menu];
+    
+    CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"menu_button.png" 
+                                      selectedImage:@"menu_button_sel.png" 
+                                             target:self 
+                                           selector:@selector(returnToMenu)];
+    
+    CCMenu *navMenu = [CCMenu menuWithItems: backItem, nil];
+    [navMenu alignItemsVertically];
+    
+    //Magic number: 
+    //It positions the button below the table with some distance
+    navMenu.position = ccp(winSize.width/2, 47); 
+}
+
+
+#pragma mark navigation methods 
+
+-(void) openHiraganaLevels{
+    
+}
+
+
+-(void) openKatakanaLevels{
+    
+}
+
+-(void) returnToMenu{
+    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
+                                               transitionWithDuration:SCENE_TRANSITION_DURATION 
+                                               scene:[KTMenuLayer node]]];
+}
+
+@end
