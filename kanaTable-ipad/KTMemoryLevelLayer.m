@@ -11,7 +11,7 @@
 #import "KTMemoryGameLayer.h"
 
 @interface KTMemoryLevelLayer()
--(void) openLevel:(id)sender;
+-(void) openLevel:(CCMenuItemLabel *)sender;
 @end
 
 @implementation KTMemoryLevelLayer
@@ -69,6 +69,13 @@
     CCMenuItemLabel *itemFive = [CCMenuItemLabel itemWithLabel:labelFive target:self selector:@selector(openLevel:)];
     CCMenuItemLabel *itemSix = [CCMenuItemLabel itemWithLabel:labelSix target:self selector:@selector(openLevel:)];
     
+    itemOne.tag = KTLevelOne;
+    itemTwo.tag = KTLevelTwo;
+    itemThree.tag = KTLevelThree;
+    itemFour.tag = KTLevelFour;
+    itemFive.tag = KTLevelFive;
+    itemSix.tag = KTLevelSix;
+        
     menu = [CCMenu menuWithItems: itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix,nil];
     [menu alignItemsVerticallyWithPadding:10];
     [self addChild:menu];
@@ -79,21 +86,20 @@
                                                             selector:@selector(returnToMenu)];
     
     CCMenu *navMenu = [CCMenu menuWithItems: backItem, nil];
-    //Magic number: 
-    //It positions the button below the table with some distance
+    
     navMenu.position = ccp(winSize.width/2, 47); 
     [self addChild:navMenu];
 }
 
--(void) openLevel:(id)sender{
-    
-    //TODO: use the sender tag and set level
-    
-    
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInR
+-(void) openLevel:(CCMenuItemLabel *)sender{
+        
+    int lvlTag = sender.tag;
+    KTMemoryGameLayer *levelLayer = [[KTMemoryGameLayer alloc] initWithLevel:lvlTag];
+    CCScene *newScene = [CCScene node];    
+    [newScene addChild:levelLayer];        
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInR 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION 
-                                               scene:[KTMemoryGameLayer node]]];
-    
+                                               scene:newScene]];    
 }
 
 
