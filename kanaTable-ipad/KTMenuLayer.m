@@ -12,6 +12,7 @@
 #import "KTKanaLayer.h"
 #import "KTInfoLayer.h"
 #import "KTGlobal.h"
+#import "KTMemoryMenuLayer.h"
 
 @interface KTMenuLayer(navigationMethods)
 /* When the user selects a button one of the open methods replaces the current 
@@ -19,6 +20,8 @@
 -(void) openHiraganaTable;
 -(void) openKatakanaTable;
 -(void) openInfoLayer;
+//Open games
+-(void) openMemoryGameLayer;
 @end
 
 @implementation KTMenuLayer
@@ -76,6 +79,20 @@
     infoMenu = [CCMenu menuWithItems:infoItem, nil];
     infoMenu.position = ccp(infoItem.contentSize.width/2, infoItem.contentSize.height/2);
     [self addChild:infoMenu];
+    
+    
+    CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"Addon #1" 
+                                              fontName:@"Arial" 
+                                              fontSize:25];
+    CCMenuItemLabel *itemOne = [CCMenuItemLabel itemWithLabel:labelOne 
+                                                       target:self 
+                                                     selector:@selector(openMemoryGameLayer)];
+
+    gameMenu = [CCMenu menuWithItems:itemOne, nil];
+    [gameMenu alignItemsHorizontallyWithPadding:10];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    gameMenu.position = ccp(winSize.width/2, itemOne.contentSize.height);
+    [self addChild:gameMenu];
 }
 
 
@@ -110,6 +127,13 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION
                                                scene:[KTInfoLayer node]]];    
+}
+
+-(void) openMemoryGameLayer{
+    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInB
+                                               transitionWithDuration:SCENE_TRANSITION_DURATION
+                                               scene:[KTMemoryMenuLayer node]]];    
 }
 
 

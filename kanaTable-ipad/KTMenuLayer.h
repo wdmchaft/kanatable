@@ -12,9 +12,9 @@
 @interface KTMenuLayer : CCLayer
 {
     //Menu for aligning items.
-    CCMenu *menu;
-    
-    CCMenu *infoMenu;
+    CCMenu *menu;    
+    CCMenu *infoMenu;    
+    CCMenu *gameMenu;
     
     CCSprite *background;
     
