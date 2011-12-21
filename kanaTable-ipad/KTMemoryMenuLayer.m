@@ -7,8 +7,9 @@
 //
 
 #import "KTMemoryMenuLayer.h"
-#import "KTGlobal.h"
 #import "KTMenuLayer.h"
+#import "KTMemoryLevelLayer.h"
+#import "KTGlobal.h"
 
 @interface KTMemoryMenuLayer()
 -(void) openHiraganaLevels;
@@ -49,7 +50,7 @@
     background.anchorPoint = ccp(0, 0);
     [self addChild:background];
     
-    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Memory game" fontName:@"Arial" fontSize:40];
+    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Memory game" fontName:@"Arial" fontSize:200];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     title.position = ccp(winSize.width/2, winSize.height - title.contentSize.height);
     [self addChild:title];
@@ -85,11 +86,23 @@
 
 -(void) openHiraganaLevels{
     
+    KTMemoryLevelLayer *levelLayer = [[KTMemoryLevelLayer alloc] initHirLevel];
+    CCScene *newScene = [CCScene node];    
+    [newScene addChild:levelLayer];        
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
+                                               transitionWithDuration:SCENE_TRANSITION_DURATION 
+                                               scene:newScene]];
 }
 
 
 -(void) openKatakanaLevels{
     
+    KTMemoryLevelLayer *levelLayer = [[KTMemoryLevelLayer alloc] initKatLevel];
+    CCScene *newScene = [CCScene  node];
+    [newScene addChild:levelLayer];    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
+                                               transitionWithDuration:SCENE_TRANSITION_DURATION 
+                                               scene:newScene]];
 }
 
 -(void) returnToMenu{
