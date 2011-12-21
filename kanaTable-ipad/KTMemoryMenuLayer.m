@@ -74,11 +74,9 @@
                                            selector:@selector(returnToMenu)];
     
     CCMenu *navMenu = [CCMenu menuWithItems: backItem, nil];
-    [navMenu alignItemsVertically];
-    
-    //Magic number: 
-    //It positions the button below the table with some distance
-    navMenu.position = ccp(winSize.width/2, 47); 
+    [navMenu alignItemsVertically];    
+    navMenu.position = ccp(winSize.width/2, 47);         
+    [self addChild:navMenu];
 }
 
 
