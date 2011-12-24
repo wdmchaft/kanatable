@@ -249,10 +249,6 @@
 		093803B614A22FFF00273B01 /* KTMemoryLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 093803B514A22FFF00273B01 /* KTMemoryLevelLayer.m */; };
 		093803BC14A239E700273B01 /* KTMemoryGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 093803BB14A239E700273B01 /* KTMemoryGameLayer.m */; };
 		093803BF14A23A7600273B01 /* gameboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 093803BE14A23A7600273B01 /* gameboard.png */; };
-		093803C514A23AB900273B01 /* lvl_menu_but_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 093803C114A23AB900273B01 /* lvl_menu_but_sel.png */; };
-		093803C614A23AB900273B01 /* lvl_menu_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 093803C214A23AB900273B01 /* lvl_menu_but.png */; };
-		093803C714A23AB900273B01 /* menu_but_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 093803C314A23AB900273B01 /* menu_but_sel.png */; };
-		093803C814A23AB900273B01 /* menu_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 093803C414A23AB900273B01 /* menu_but.png */; };
 		097A1D3F1487FFF2005EA842 /* kana_table_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3D1487FFF2005EA842 /* kana_table_sel.png */; };
 		097A1D401487FFF2005EA842 /* kana_table.png in Resources */ = {isa = PBXBuildFile; fileRef = 097A1D3E1487FFF2005EA842 /* kana_table.png */; };
 		09AAA4781497FB300092E7EA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 09AAA4771497FB300092E7EA /* fire.png */; };
@@ -638,10 +634,6 @@
 		093803BA14A239E700273B01 /* KTMemoryGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMemoryGameLayer.h; sourceTree = "<group>"; };
 		093803BB14A239E700273B01 /* KTMemoryGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMemoryGameLayer.m; sourceTree = "<group>"; };
 		093803BE14A23A7600273B01 /* gameboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameboard.png; path = Resources/gameboard.png; sourceTree = "<group>"; };
-		093803C114A23AB900273B01 /* lvl_menu_but_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lvl_menu_but_sel.png; path = Resources/lvl_menu_but_sel.png; sourceTree = "<group>"; };
-		093803C214A23AB900273B01 /* lvl_menu_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lvl_menu_but.png; path = Resources/lvl_menu_but.png; sourceTree = "<group>"; };
-		093803C314A23AB900273B01 /* menu_but_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_but_sel.png; path = Resources/menu_but_sel.png; sourceTree = "<group>"; };
-		093803C414A23AB900273B01 /* menu_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_but.png; path = Resources/menu_but.png; sourceTree = "<group>"; };
 		097A1D3D1487FFF2005EA842 /* kana_table_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table_sel.png; path = Resources/kana_table_sel.png; sourceTree = "<group>"; };
 		097A1D3E1487FFF2005EA842 /* kana_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table.png; path = Resources/kana_table.png; sourceTree = "<group>"; };
 		09AAA4771497FB300092E7EA /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
@@ -711,7 +703,6 @@
 		090A233F1487D18B005AF496 /* kanaTable-ipad */ = {
 			isa = PBXGroup;
 			children = (
-				093803AB14A228C400273B01 /* Games */,
 				090A24B81487D4FC005AF496 /* Model */,
 				090A24AB1487D4B1005AF496 /* Layers */,
 				090A24941487D18F005AF496 /* AppDelegate.h */,
@@ -1057,6 +1048,7 @@
 		090A24AB1487D4B1005AF496 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				093803AB14A228C400273B01 /* Memory game */,
 				090A24AC1487D4CF005AF496 /* KTInfoLayer.h */,
 				090A24AD1487D4CF005AF496 /* KTInfoLayer.m */,
 				090A24AE1487D4CF005AF496 /* KTKanaDetailLayer.h */,
@@ -1072,6 +1064,8 @@
 		090A24B81487D4FC005AF496 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09FCFB0914A2520E00DE7FE3 /* KTMemoryCard.h */,
+				09FCFB0A14A2520E00DE7FE3 /* KTMemoryCard.m */,
 				090A24B91487D51A005AF496 /* com.ccColor3B.h */,
 				090A24BA1487D51A005AF496 /* KTGlobal.h */,
 				090A24BB1487D51A005AF496 /* KTKana.h */,
@@ -1244,7 +1238,7 @@
 			path = Resources/Audio;
 			sourceTree = "<group>";
 		};
-		093803AB14A228C400273B01 /* Games */ = {
+		093803AB14A228C400273B01 /* Memory game */ = {
 			isa = PBXGroup;
 			children = (
 				093803AD14A22BC600273B01 /* KTMemoryMenuLayer.h */,
@@ -1253,10 +1247,8 @@
 				093803B514A22FFF00273B01 /* KTMemoryLevelLayer.m */,
 				093803BA14A239E700273B01 /* KTMemoryGameLayer.h */,
 				093803BB14A239E700273B01 /* KTMemoryGameLayer.m */,
-				09FCFB0914A2520E00DE7FE3 /* KTMemoryCard.h */,
-				09FCFB0A14A2520E00DE7FE3 /* KTMemoryCard.m */,
 			);
-			name = Games;
+			name = "Memory game";
 			sourceTree = "<group>";
 		};
 		093803B014A22C8D00273B01 /* Games */ = {
@@ -1280,10 +1272,6 @@
 			isa = PBXGroup;
 			children = (
 				09FCFB0D14A253DE00DE7FE3 /* card_tmp.png */,
-				093803C114A23AB900273B01 /* lvl_menu_but_sel.png */,
-				093803C214A23AB900273B01 /* lvl_menu_but.png */,
-				093803C314A23AB900273B01 /* menu_but_sel.png */,
-				093803C414A23AB900273B01 /* menu_but.png */,
 				093803BE14A23A7600273B01 /* gameboard.png */,
 			);
 			name = Gameboard;
@@ -1484,10 +1472,6 @@
 				09BAADB314A0116C00679006 /* icon72x72.png in Resources */,
 				093803B314A22CC400273B01 /* memo_menu.png in Resources */,
 				093803BF14A23A7600273B01 /* gameboard.png in Resources */,
-				093803C514A23AB900273B01 /* lvl_menu_but_sel.png in Resources */,
-				093803C614A23AB900273B01 /* lvl_menu_but.png in Resources */,
-				093803C714A23AB900273B01 /* menu_but_sel.png in Resources */,
-				093803C814A23AB900273B01 /* menu_but.png in Resources */,
 				09FCFB0E14A253DE00DE7FE3 /* card_tmp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
