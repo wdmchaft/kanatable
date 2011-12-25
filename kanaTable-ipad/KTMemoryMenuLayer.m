@@ -45,7 +45,7 @@
 #pragma mark Setup
 
 -(void) setupMenu{
-
+    
     background = [CCSprite spriteWithFile:@"memo_menu.png"];
     background.anchorPoint = ccp(0, 0);
     [self addChild:background];
@@ -54,24 +54,25 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     title.position = ccp(winSize.width/2, winSize.height - title.contentSize.height);
     [self addChild:title];
-
-    hirItem = [CCMenuItemImage itemFromNormalImage:@"hiragana_but.png" 
-                                     selectedImage:@"hiragana_but_sel.png" 
-                                            target:self 
-                                          selector:@selector(openHiraganaLevels)];
-    katItem = [CCMenuItemImage itemFromNormalImage:@"katakana_but.png" 
-                                     selectedImage:@"katakana_but_sel.png" 
-                                            target:self 
-                                          selector:@selector(openKatakanaLevels)];
     
-    menu = [CCMenu menuWithItems:hirItem, katItem, nil];
-    [menu alignItemsHorizontallyWithPadding:3];
+    CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"Hiragana" fontName:@"Arial" fontSize:60];
+    CCLabelTTF *labelTwo = [CCLabelTTF labelWithString:@"Katakana" fontName:@"Arial" fontSize:60];
+    
+    CCMenuItemLabel *hirItem = [CCMenuItemLabel itemWithLabel:labelOne
+                                                       target:self 
+                                                     selector:@selector(openHiraganaLevels)];
+    CCMenuItemLabel *katItem = [CCMenuItemLabel itemWithLabel:labelTwo
+                                                       target:self 
+                                                     selector:@selector(openKatakanaLevels)];
+    
+    CCMenu *menu = [CCMenu menuWithItems:hirItem, katItem, nil];
+    [menu alignItemsHorizontallyWithPadding:10];
     [self addChild:menu];
     
     CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"menu_button.png" 
-                                      selectedImage:@"menu_button_sel.png" 
-                                             target:self 
-                                           selector:@selector(returnToMenu)];
+                                                       selectedImage:@"menu_button_sel.png" 
+                                                              target:self 
+                                                            selector:@selector(returnToMenu)];
     
     CCMenu *navMenu = [CCMenu menuWithItems: backItem, nil];
     [navMenu alignItemsVertically];    
@@ -84,9 +85,9 @@
 
 -(void) openHiraganaLevels{
     
-    KTMemoryLevelLayer *levelLayer = [[KTMemoryLevelLayer alloc] initHirLevel];
+    KTMemoryLevelLayer *levelLayer = [KTMemoryLevelLayer hiraganaLevel];
     CCScene *newScene = [CCScene node];    
-    [newScene addChild:levelLayer];        
+    [newScene addChild:levelLayer];       
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
                                                transitionWithDuration:SCENE_TRANSITION_DURATION 
                                                scene:newScene]];
@@ -95,7 +96,7 @@
 
 -(void) openKatakanaLevels{
     
-    KTMemoryLevelLayer *levelLayer = [[KTMemoryLevelLayer alloc] initKatLevel];
+    KTMemoryLevelLayer *levelLayer = [KTMemoryLevelLayer katakanLevel];
     CCScene *newScene = [CCScene  node];
     [newScene addChild:levelLayer];    
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL 
