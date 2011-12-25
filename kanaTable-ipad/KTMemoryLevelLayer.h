@@ -12,10 +12,6 @@
 
 @interface KTMemoryLevelLayer : CCLayer {
     CCSprite *background;    
-    
-    //Menu for aligning items.
-    CCMenu *menu;    
-
     TKKanaType kanaType;
 }
 
