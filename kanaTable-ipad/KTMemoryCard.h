@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface KTMemoryCard : CCSprite {
-    
+@class KTKana;
+@interface KTMemoryCard : CCSprite{    
+    KTKana *kana;
     CCLabelTTF *label;
+    BOOL isFacedUp;
 }
 
-+(id) newCard;
+@property (assign) BOOL isFacedUp;
+
++(id) withKey:(NSUInteger)key;
+-(id) initCardWithKey:(NSUInteger)key;
 
 -(void) flipCard;
-
 @end
