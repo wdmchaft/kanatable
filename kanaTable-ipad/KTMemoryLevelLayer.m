@@ -16,6 +16,16 @@
 
 @implementation KTMemoryLevelLayer
 
++(id) katakanLevel{
+    
+    return [[[self alloc] initKatLevel] autorelease];
+}
+
++(id) hiraganaLevel{
+    
+    return [[[self alloc] initHirLevel] autorelease];
+}
+
 
 #pragma mark -
 #pragma mark Init methods
@@ -76,7 +86,7 @@
     itemFive.tag = KTLevelFive;
     itemSix.tag = KTLevelSix;
         
-    menu = [CCMenu menuWithItems: itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix,nil];
+    CCMenu *menu = [CCMenu menuWithItems: itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix,nil];
     [menu alignItemsVerticallyWithPadding:10];
     [self addChild:menu];
     
@@ -93,8 +103,8 @@
 
 -(void) openLevel:(CCMenuItemLabel *)sender{
         
-    int lvlTag = sender.tag;
-    KTMemoryGameLayer *levelLayer = [[KTMemoryGameLayer alloc] initWithLevel:lvlTag];
+    int lvl = sender.tag;
+    KTMemoryGameLayer *levelLayer = [KTMemoryGameLayer withLevel:lvl];
     CCScene *newScene = [CCScene node];    
     [newScene addChild:levelLayer];        
     [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInR 
