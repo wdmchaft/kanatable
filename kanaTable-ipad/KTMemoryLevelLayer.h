@@ -21,6 +21,9 @@
 
 -(void) setupMenu;
 
++(id) katakanLevel;
++(id) hiraganaLevel;
+
 -(id) initKatLevel;
 -(id) initHirLevel;
 
