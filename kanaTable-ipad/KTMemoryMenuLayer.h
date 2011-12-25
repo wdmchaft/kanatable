@@ -9,20 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface KTMemoryMenuLayer : CCLayer {
-    
-    CCSprite *background;    
-    
-    //Menu for aligning items.
-    CCMenu *menu;    
-    
-    //Two buttons
-    CCMenuItemImage *hirItem;
-    CCMenuItemImage *katItem;    
+@interface KTMemoryMenuLayer : CCLayer {    
+    CCSprite *background;
 }
 
 +(CCScene *) scene;
-
-// Set the methods to be called for the naviagtion buttons.
 -(void) setupMenu;
 @end
