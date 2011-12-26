@@ -53,7 +53,7 @@
     float fontSize = 50.0f;
     int basicKanaCount = 43;
     
-    NSString *plistName;
+    NSString *plistName = @"ddd";
     NSString *fontName = @"Arial";
     Plist *plist = [[Plist alloc] init];
     
