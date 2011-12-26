@@ -625,6 +625,7 @@
 		09C2656114993F3900AD1DFF /* pen_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pen_default.png; path = Resources/pen_default.png; sourceTree = "<group>"; };
 		09C2656214993F3900AD1DFF /* v_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v_default.png; path = Resources/v_default.png; sourceTree = "<group>"; };
 		09C2656314993F3900AD1DFF /* x_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x_default.png; path = Resources/x_default.png; sourceTree = "<group>"; };
+		09EDCADD14A8B040005C695C /* KTKanaDiatric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTKanaDiatric.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1043,6 +1044,7 @@
 		090A24B81487D4FC005AF496 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09EDCADD14A8B040005C695C /* KTKanaDiatric.h */,
 				090A24BA1487D51A005AF496 /* KTGlobal.h */,
 				090A24BB1487D51A005AF496 /* KTKana.h */,
 				090A24BC1487D51A005AF496 /* KTKana.m */,
