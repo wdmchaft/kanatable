@@ -78,20 +78,6 @@
     infoMenu = [CCMenu menuWithItems:infoItem, nil];
     infoMenu.position = ccp(infoItem.contentSize.width/2, infoItem.contentSize.height/2);
     [self addChild:infoMenu];
-    
-    
-    CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"Addon #1" 
-                                              fontName:@"Arial" 
-                                              fontSize:25];
-    CCMenuItemLabel *itemOne = [CCMenuItemLabel itemWithLabel:labelOne 
-                                                       target:self 
-                                                     selector:@selector(openMemoryGameLayer)];
-
-    gameMenu = [CCMenu menuWithItems:itemOne, nil];
-    [gameMenu alignItemsHorizontallyWithPadding:10];
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    gameMenu.position = ccp(winSize.width/2, itemOne.contentSize.height);
-    [self addChild:gameMenu];
 }
 
 
