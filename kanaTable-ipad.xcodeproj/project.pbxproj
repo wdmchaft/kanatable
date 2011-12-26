@@ -732,8 +732,14 @@
 		0958FDD514A8D145007012A5 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		0958FDD614A8D145007012A5 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		0958FDD714A8D145007012A5 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		0958FFCA14A8D240007012A5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		0958FFCD14A8D240007012A5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0958FFCE14A8D240007012A5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0958FFCF14A8D240007012A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		097A1D3D1487FFF2005EA842 /* kana_table_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table_sel.png; path = Resources/kana_table_sel.png; sourceTree = "<group>"; };
 		097A1D3E1487FFF2005EA842 /* kana_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kana_table.png; path = Resources/kana_table.png; sourceTree = "<group>"; };
+		09978EB414A8D715002B9660 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		09978EB814A8D715002B9660 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		09AAA4771497FB300092E7EA /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		09BAADB214A0116C00679006 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 		09C2656114993F3900AD1DFF /* pen_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pen_default.png; path = Resources/pen_default.png; sourceTree = "<group>"; };
@@ -803,6 +809,10 @@
 				090A23391487D18B005AF496 /* UIKit.framework */,
 				090A233B1487D18B005AF496 /* Foundation.framework */,
 				090A233D1487D18B005AF496 /* CoreGraphics.framework */,
+				0958FFCA14A8D240007012A5 /* Cocoa.framework */,
+				09978EB414A8D715002B9660 /* OpenGL.framework */,
+				09978EB814A8D715002B9660 /* AppKit.framework */,
+				0958FFCC14A8D240007012A5 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1354,6 +1364,16 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		0958FFCC14A8D240007012A5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0958FFCD14A8D240007012A5 /* AppKit.framework */,
+				0958FFCE14A8D240007012A5 /* CoreData.framework */,
+				0958FFCF14A8D240007012A5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
 		09C2655F14993F1A00AD1DFF /* Drawing menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1536,6 +1556,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 090A23201487D18B005AF496;
 			productRefGroup = 090A232C1487D18B005AF496 /* Products */;
@@ -1869,6 +1890,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kanaTable-ipad/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "kanaTable-ipad/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lz";
@@ -1890,6 +1912,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kanaTable-ipad/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "kanaTable-ipad/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lz";
@@ -1970,6 +1993,7 @@
 				0958FB5014A8CF1F007012A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
