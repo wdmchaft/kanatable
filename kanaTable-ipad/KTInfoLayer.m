@@ -43,17 +43,18 @@
 }
 
 -(void) setupInfo{
-    background = [CCSprite spriteWithFile:@"credits.png"];
+    
+    CCSprite *background = [CCSprite spriteWithFile:@"credits.png"];
     background.anchorPoint = ccp(0, 0);
     [self addChild:background];
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    backItem = [CCMenuItemImage itemFromNormalImage:@"menu_button_short.png" 
-                                      selectedImage:@"menu_button_short_sel.png" 
-                                             target:self 
-                                           selector:@selector(returnToMenu)];
+    CCMenuItemImage *backItem = [CCMenuItemImage itemFromNormalImage:@"menu_button_short.png" 
+                                                       selectedImage:@"menu_button_short_sel.png" 
+                                                              target:self 
+                                                            selector:@selector(returnToMenu)];
     
-    navMenu = [CCMenu menuWithItems: backItem, nil];
+    CCMenu *navMenu = [CCMenu menuWithItems: backItem, nil];
     [navMenu setContentSize:CGSizeMake(backItem.contentSize.width, backItem.contentSize.height)];
     [navMenu alignItemsVertically];
     
@@ -62,7 +63,7 @@
     navMenu.position = ccp(winSize.width/2, winSize.height/2 - 147); 
     
     [self addChild:navMenu];
-
+    
 }
 
 
