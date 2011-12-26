@@ -8,7 +8,6 @@
 
 #import "KTKanaDetailLayer.h"
 #import "SimpleAudioEngine.h"
-#import "com.ccColor3B.h"
 #import "KTMenuLayer.h"
 #import "KTKanaLayer.h"
 #import "KTGlobal.h"
