@@ -12,7 +12,6 @@
 #import "KTKanaLayer.h"
 #import "KTInfoLayer.h"
 #import "KTGlobal.h"
-#import "KTMemoryMenuLayer.h"
 
 @interface KTMenuLayer(navigationMethods)
 /* When the user selects a button one of the open methods replaces the current 
@@ -128,14 +127,6 @@
                                                transitionWithDuration:SCENE_TRANSITION_DURATION
                                                scene:[KTInfoLayer node]]];    
 }
-
--(void) openMemoryGameLayer{
-    
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInB
-                                               transitionWithDuration:SCENE_TRANSITION_DURATION
-                                               scene:[KTMemoryMenuLayer node]]];    
-}
-
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
