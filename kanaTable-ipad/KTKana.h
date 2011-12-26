@@ -7,24 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KTKanaDiatric.h"
 #import "KTGlobal.h"
 #import "cocos2d.h"
 
-@class KTKana;
-@protocol KTKanaDiatricDataSource <NSObject>
-// Returns number of kana to be displayed. 
--(NSUInteger) numberOfDiatricKana;
-//Returns the diatric kana at the current index.     
--(KTKana *) diatricKanaAtIndex:(NSUInteger)index;
-@end
-
-@protocol KTKanaDiatricDelegate <NSObject>
-//Do with the selected kana. 
--(void) didSelectDiatricKanaItem:(CCMenuItemLabel *)item;
-@end
-
-@interface KTKana : NSObject{
-    
+@interface KTKana : NSObject{    
     NSString *kana;
     NSString *romaji;
     NSUInteger tagID;
