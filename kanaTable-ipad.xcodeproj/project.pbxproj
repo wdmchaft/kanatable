@@ -491,7 +491,6 @@
 		090A24B11487D4CF005AF496 /* KTKanaLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTKanaLayer.m; sourceTree = "<group>"; };
 		090A24B21487D4CF005AF496 /* KTMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMenuLayer.h; sourceTree = "<group>"; };
 		090A24B31487D4CF005AF496 /* KTMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMenuLayer.m; sourceTree = "<group>"; };
-		090A24B91487D51A005AF496 /* com.ccColor3B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = com.ccColor3B.h; sourceTree = "<group>"; };
 		090A24BA1487D51A005AF496 /* KTGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTGlobal.h; sourceTree = "<group>"; };
 		090A24BB1487D51A005AF496 /* KTKana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTKana.h; sourceTree = "<group>"; };
 		090A24BC1487D51A005AF496 /* KTKana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTKana.m; sourceTree = "<group>"; };
@@ -1044,7 +1043,6 @@
 		090A24B81487D4FC005AF496 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				090A24B91487D51A005AF496 /* com.ccColor3B.h */,
 				090A24BA1487D51A005AF496 /* KTGlobal.h */,
 				090A24BB1487D51A005AF496 /* KTKana.h */,
 				090A24BC1487D51A005AF496 /* KTKana.m */,
