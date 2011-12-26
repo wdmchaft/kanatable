@@ -11,6 +11,26 @@
 #import "KTGlobal.h"
 #import "cocos2d.h"
 
+/*	
+ *
+ *  KTKana
+ *  This object is used for retriveing the strings that are used when displaying 
+ *  labels. 
+ *
+ *      @kana
+ *      kana is the japanese syllablel.
+ * 
+ *      @romaji
+ *      romaji is the japanese syllablel.
+ *
+ *      @tagID
+ *      The tagID is used for retriveing the kana and romaji from a plist.
+ *
+ *      @kanaType
+ *      The enum kanaType is used to distungish between the two basic 
+ *      japanese(hiragana, katakana) syllables
+ */
+
 @interface KTKana : NSObject{    
     NSString *kana;
     NSString *romaji;
