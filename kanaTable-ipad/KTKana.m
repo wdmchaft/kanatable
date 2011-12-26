@@ -26,7 +26,7 @@
 
 -(void) setKanaProperties{
     
-    NSString *kanaPlist;
+    NSString *kanaPlist = @"ddd";
     NSString *romajiPlist = @"romaji";
     
     if (kanaType == HIRAGANA)
@@ -37,13 +37,13 @@
     Plist *plist = [[Plist alloc] init];
     
     NSDictionary *kanaDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:kanaPlist]];
-    NSDictionary *romajiDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:romajiPlist]];
+    NSDictionary *romajiDict = [[NSDictionary  alloc ] initWithDictionary:[plist readPlist:romajiPlist]];
     [plist release];
     
-    NSString *kanaKey = [NSString stringWithFormat:@"%d", tagID];
-    
+    NSString *kanaKey = [NSString stringWithFormat:@"%d", tagID];    
     kana = [[kanaDict objectForKey:kanaKey] copy];
     [kanaDict release];
+    
     romaji = [[romajiDict objectForKey:kanaKey] copy];
     [romajiDict release];
 }
