@@ -21,14 +21,14 @@
  *      kana is the japanese syllablel.
  * 
  *      @romaji
- *      romaji is the japanese syllablel.
+ *      romaji is the latin pronuciation of the syllablel.
  *
  *      @tagID
  *      The tagID is used for retriveing the kana and romaji from a plist.
  *
  *      @kanaType
  *      The enum kanaType is used to distungish between the two basic 
- *      japanese(hiragana, katakana) syllables
+ *      japanese(hiragana, katakana) syllabaries.
  */
 
 @interface KTKana : NSObject{    
