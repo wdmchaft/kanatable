@@ -51,8 +51,7 @@
 
 -(BOOL) isDiatric{
     
-    if ( /* I already know which kanas' should be checked,
-          this is magic, but it works well with the current setup of the plist. */
+    if (
         ([romaji isEqualToString:@"ka"])  || ([romaji isEqualToString:@"ki"])  ||
         ([romaji isEqualToString:@"ku"])  || ([romaji isEqualToString:@"ke"])  ||
         ([romaji isEqualToString:@"ko"])  || ([romaji isEqualToString:@"sa"])  || 
