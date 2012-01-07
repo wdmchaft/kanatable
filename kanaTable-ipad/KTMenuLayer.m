@@ -16,13 +16,10 @@
 @interface KTMenuLayer(navigationMethods)
 //Configure
 -(void) setupMenu;
-/* When the user selects a button one of the open methods replaces the current 
- scene with a new table scene. */
+//Navigation
 -(void) openHiraganaTable;
 -(void) openKatakanaTable;
 -(void) openInfoLayer;
-//Open games
--(void) openMemoryGameLayer;
 @end
 
 @implementation KTMenuLayer
