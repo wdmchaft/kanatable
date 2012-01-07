@@ -9,7 +9,7 @@
 #import "KTInfoLayer.h"
 #import "KTMenuLayer.h"
 #import "KTGlobal.h"
-//Private methods for setup and navigation.  Implemented basic layer code.
+
 @interface KTInfoLayer(privateMethods)
 //Setup a back button the menu.
 -(void) setupInfo;
@@ -58,8 +58,6 @@
     [navMenu setContentSize:CGSizeMake(backItem.contentSize.width, backItem.contentSize.height)];
     [navMenu alignItemsVertically];
     
-    //Magic number: 
-    //It positions the button below the table with some distance
     navMenu.position = ccp(winSize.width/2, winSize.height/2 - 147); 
     
     [self addChild:navMenu];
