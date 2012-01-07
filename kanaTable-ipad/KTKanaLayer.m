@@ -13,6 +13,14 @@
 #import "KTKana.h"
 #import "KTKanaDetailLayer.h"
 
+@interface KTKanaLayer()
+//Configure
+-(void) setupTable;
+//Navigation
+-(void) returnToMenu;
+-(void) didSelectKana:(CCMenuItemLabel *)sender;
+@end
+
 
 @implementation KTKanaLayer
 
