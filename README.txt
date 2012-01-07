@@ -1,8 +1,8 @@
 KanaTable is an ipad application for learning basic japanese syllables.
 
-For any copyright information look at the LICENSE file and all the other files in 'libs/'.
+For any copyright information look at the LICENSE.
 
-The application uses cocos2d-iphone: http://www.cocos2d-iphone.org/
+The application uses cocos2d-ios: http://www.cocos2d-iphone.org/
 
 All sound files are from: http://thejapanesepage.com
 
