@@ -14,6 +14,8 @@
 #import "KTGlobal.h"
 
 @interface KTMenuLayer(navigationMethods)
+//Configure
+-(void) setupMenu;
 /* When the user selects a button one of the open methods replaces the current 
  scene with a new table scene. */
 -(void) openHiraganaTable;

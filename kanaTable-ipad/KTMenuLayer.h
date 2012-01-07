@@ -26,7 +26,4 @@
 }
 
 +(CCScene *) scene;
-
-// Set the methods to be called for the naviagtion buttons.
--(void) setupMenu;
 @end
