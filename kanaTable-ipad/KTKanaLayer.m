@@ -9,7 +9,7 @@
 #import "KTKanaLayer.h"
 #import "KTMenuLayer.h"
 #import "KTGlobal.h"
-#import "Plist.h"
+#import "NSDictionary+readPlist.h"
 #import "KTKana.h"
 #import "KTKanaDetailLayer.h"
 
@@ -55,7 +55,6 @@
     
     NSString *plistName = @"ddd";
     NSString *fontName = @"Arial";
-    Plist *plist = [[Plist alloc] init];
     
     if (kanaType == HIRAGANA) {
         plistName = @"hiragana";
@@ -67,7 +66,7 @@
     tableMenu = [CCMenu menuWithItems: nil];
     
     //Create a dictionary with all the kana.
-    NSDictionary *kanaDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:plistName]];
+    NSDictionary *kanaDict = [NSDictionary readPlist:plistName];
     
     /* For the table we want to use the kanas which use the key values 0-43.
      The loop Use the dictionary to load in the kanas. Then it creates 

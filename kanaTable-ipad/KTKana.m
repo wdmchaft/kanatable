@@ -7,7 +7,7 @@
 //
 
 #import "KTKana.h"
-#import "Plist.h"
+#import "NSDictionary+readPlist.h"
 
 @implementation KTKana
 
@@ -33,19 +33,13 @@
         kanaPlist = @"hiragana";
     else if (kanaType == KATAKANA)
         kanaPlist = @"katakana";
-    
-    Plist *plist = [[Plist alloc] init];
-    
-    NSDictionary *kanaDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:kanaPlist]];
-    NSDictionary *romajiDict = [[NSDictionary  alloc ] initWithDictionary:[plist readPlist:romajiPlist]];
-    [plist release];
+        
+    NSDictionary *kanaDict = [NSDictionary readPlist:kanaPlist];
+    NSDictionary *romajiDict = [NSDictionary readPlist:romajiPlist];
     
     NSString *kanaKey = [NSString stringWithFormat:@"%d", tagID];    
-    kana = [[kanaDict objectForKey:kanaKey] copy];
-    [kanaDict release];
-    
+    kana = [[kanaDict objectForKey:kanaKey] copy];    
     romaji = [[romajiDict objectForKey:kanaKey] copy];
-    [romajiDict release];
 }
 
 
