@@ -18,10 +18,4 @@
 
 //Init for the appropriate table
 -(id) initWithKanaType:(TKKanaType) kaType;
-//Setup a back button the menu.
--(void) setupTable;
-//Allow user to return to the menu, by tapping the backItem.
--(void) returnToMenu;
-//Do something with the selected kana.
--(void) didSelectKana:(CCMenuItemLabel *)sender;
 @end

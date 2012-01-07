@@ -12,9 +12,8 @@
 @interface KTMenuLayer : CCLayer
 {
     //Menu for aligning items.
-    CCMenu *menu;
-    
-    CCMenu *infoMenu;
+    CCMenu *menu;    
+    CCMenu *infoMenu;    
     
     CCSprite *background;
     
@@ -27,7 +26,4 @@
 }
 
 +(CCScene *) scene;
-
-// Set the methods to be called for the naviagtion buttons.
--(void) setupMenu;
 @end

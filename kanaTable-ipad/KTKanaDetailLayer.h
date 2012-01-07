@@ -41,20 +41,5 @@
     CCSprite *clearSprite;
 }
 
-// Setup the kana to display and pronunciation. Add the back button.
 -(id) initWithKana:(KTKana *)aKana;
-//Add the kana to the layer.
--(void) setupDetailKana;
--(void) setupMenu;
-// Pop the running scene and return to the table.
--(void) returnToTable;
-//Load in the diatric kanas and add them to the menu
--(void) setupMiniMenuDiatric;
-//Play preloaded sounds.
--(void) playKanaSound;
-//Used when user's tap a diatric kana
--(void) fadeOutLabel:(CCLabelTTF *) label;
--(void) fadeInLabel:(CCLabelTTF *) label;
--(void) transitionDone;
-
 @end

@@ -7,24 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KTKanaDiatric.h"
 #import "KTGlobal.h"
 #import "cocos2d.h"
 
-@class KTKana;
-@protocol KTKanaDiatricDataSource <NSObject>
-// Returns number of kana to be displayed. 
--(NSUInteger) numberOfDiatricKana;
-//Returns the diatric kana at the current index.     
--(KTKana *) diatricKanaAtIndex:(NSUInteger)index;
-@end
+/*	
+ *
+ *  KTKana
+ *  This object is used for retriveing the strings that are used when displaying 
+ *  labels. 
+ *
+ *      @kana
+ *      kana is the japanese syllablel.
+ * 
+ *      @romaji
+ *      romaji is the latin pronuciation of the syllablel.
+ *
+ *      @tagID
+ *      The tagID is used for retriveing the kana and romaji from a plist.
+ *
+ *      @kanaType
+ *      The enum kanaType is used to distungish between the two basic 
+ *      japanese(hiragana, katakana) syllabaries.
+ */
 
-@protocol KTKanaDiatricDelegate <NSObject>
-//Do with the selected kana. 
--(void) didSelectDiatricKanaItem:(CCMenuItemLabel *)item;
-@end
-
-@interface KTKana : NSObject{
-    
+@interface KTKana : NSObject{    
     NSString *kana;
     NSString *romaji;
     NSUInteger tagID;

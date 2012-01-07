@@ -10,9 +10,6 @@
 #import "cocos2d.h"
 
 @interface KTInfoLayer : CCLayer {
-    CCSprite *background;
-    CCMenu *navMenu;
-    CCMenuItemImage *backItem;
 }
 
 @end

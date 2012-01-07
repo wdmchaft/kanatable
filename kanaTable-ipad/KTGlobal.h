@@ -11,5 +11,14 @@ typedef enum TKKanaType {
     KATAKANA = 1,
 }TKKanaType;
 
+typedef enum KTLevel{
+    KTLevelOne = 1001,
+    KTLevelTwo,
+    KTLevelThree,
+    KTLevelFour,
+    KTLevelFive,
+    KTLevelSix,
+}KTLevel;
+
 #define SCENE_TRANSITION_DURATION 0.5f
 #define ACTION_DURATION 1.5f

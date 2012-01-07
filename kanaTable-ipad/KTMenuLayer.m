@@ -14,8 +14,9 @@
 #import "KTGlobal.h"
 
 @interface KTMenuLayer(navigationMethods)
-/* When the user selects a button one of the open methods replaces the current 
- scene with a new table scene. */
+//Configure
+-(void) setupMenu;
+//Navigation
 -(void) openHiraganaTable;
 -(void) openKatakanaTable;
 -(void) openInfoLayer;
@@ -111,7 +112,6 @@
                                                transitionWithDuration:SCENE_TRANSITION_DURATION
                                                scene:[KTInfoLayer node]]];    
 }
-
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

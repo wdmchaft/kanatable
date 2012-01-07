@@ -8,16 +8,29 @@
 
 #import "KTKanaDetailLayer.h"
 #import "SimpleAudioEngine.h"
-#import "com.ccColor3B.h"
 #import "KTMenuLayer.h"
 #import "KTKanaLayer.h"
 #import "KTGlobal.h"
 
-@interface KTKanaDetailLayer(Drawing)
+@interface KTKanaDetailLayer(Privatemethods)
+//Configure layer
+-(void) setupMenu;
+-(void) setupDetailKana;
+-(void) setupMiniMenuDiatric;
+//Drawing
 -(void) startDrawing;
 -(void) endDrawing;
 -(void) clearDrawing;
+//Navigation
+-(void) returnToTable;
+//Sound
+-(void) playKanaSound;
+//Used when user tap a diatric kana
+-(void) fadeOutLabel:(CCLabelTTF *) label;
+-(void) fadeInLabel:(CCLabelTTF *) label;
+-(void) transitionDone;
 @end
+
 
 @implementation KTKanaDetailLayer
 
@@ -52,7 +65,7 @@
                                      fontName:@"Arial" 
                                      fontSize:300];
     
-    //We want to first show the japanese kana.
+    //First show the japanese kana.
     isKanaVisible = YES;
     [romajiLabel setVisible:NO];
     kanaLabel.position = ccp(winSize.width/2, winSize.height/2);
@@ -143,7 +156,7 @@
     
     NSUInteger diatricCount = [self numberOfDiatricKana];
     
-    //The combinations use the (tag * 100) as keys.
+    //The combinations use the (tagID * 100) as keys.
     NSUInteger index = (kanaObject.tagID * 100);
     
     //By Incrementing we get all combinations

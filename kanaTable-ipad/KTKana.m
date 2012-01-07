@@ -7,7 +7,7 @@
 //
 
 #import "KTKana.h"
-#import "Plist.h"
+#import "NSDictionary+readPlist.h"
 
 @implementation KTKana
 
@@ -26,33 +26,26 @@
 
 -(void) setKanaProperties{
     
-    NSString *kanaPlist;
+    NSString *kanaPlist = @"ddd";
     NSString *romajiPlist = @"romaji";
     
     if (kanaType == HIRAGANA)
         kanaPlist = @"hiragana";
     else if (kanaType == KATAKANA)
         kanaPlist = @"katakana";
+        
+    NSDictionary *kanaDict = [NSDictionary readPlist:kanaPlist];
+    NSDictionary *romajiDict = [NSDictionary readPlist:romajiPlist];
     
-    Plist *plist = [[Plist alloc] init];
-    
-    NSDictionary *kanaDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:kanaPlist]];
-    NSDictionary *romajiDict = [[NSDictionary alloc] initWithDictionary:[plist readPlist:romajiPlist]];
-    [plist release];
-    
-    NSString *kanaKey = [NSString stringWithFormat:@"%d", tagID];
-    
-    kana = [[kanaDict objectForKey:kanaKey] copy];
-    [kanaDict release];
+    NSString *kanaKey = [NSString stringWithFormat:@"%d", tagID];    
+    kana = [[kanaDict objectForKey:kanaKey] copy];    
     romaji = [[romajiDict objectForKey:kanaKey] copy];
-    [romajiDict release];
 }
 
 
 -(BOOL) isDiatric{
     
-    if ( /* I already know which kanas' should be checked,
-          this is magic, but it works well with the current setup of the plist. */
+    if (
         ([romaji isEqualToString:@"ka"])  || ([romaji isEqualToString:@"ki"])  ||
         ([romaji isEqualToString:@"ku"])  || ([romaji isEqualToString:@"ke"])  ||
         ([romaji isEqualToString:@"ko"])  || ([romaji isEqualToString:@"sa"])  || 
