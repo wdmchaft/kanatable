@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>cocos2d-sources.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>kanaTable-ipad.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,66 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>090A232A1487D18B005AF496</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0911853914A8B83B00278F9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0911867414A8B85D00278F9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0911877A14A8B8AF00278F9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0958F7B414A8CB00007012A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0958FB4514A8CF1E007012A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0958FEA814A8D1D1007012A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0958FFC814A8D23F007012A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>098FB81114B8C3F4008BB639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>098FB82014B8C43D008BB639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>098FB83114B8C498008BB639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>09978EB014A8D715002B9660</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>09978FE514A8D77D002B9660</key>
 		<dict>
 			<key>primary</key>
 			<true/>
